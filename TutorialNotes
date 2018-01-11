@@ -1,0 +1,76 @@
+to add any other library to our application use install command .
+** npm install --save bootstrap
+
+Then add this library to .angular-cli.json
+
+"styles": [
+  "styles.css",
+  "../node_modules/bootstrap"
+],
+
+
+Always index.html file render in browser .
+
+if u open the index.tml u ll find app-rot section.
+
+in app.component.ts selector: 'app-root' is present which load the component.
+
+when ng serve run the compile create a bundle of js and punt into index.html and final these s
+
+
+main.ts is load all the component.
+platformBrowserDynamic().bootstrapModule(AppModule) while analyse this ll load AppModule.
+
+In app module
+
+  bootstrap: [AppComponent]  : says angular to says that its a special comp for the project .
+  All other component of project need to be declare here for initializing .
+  All the project related component should be place in this folder .
+Creating Component:
+  1.A component is a typescript class .
+  2.Create a folder under app folder lets say server
+  3.then create 2 file in server follder i.e server.component.html and server.component.ts
+  **********************************************************
+  import {Component} from '@angular/core'
+  @Component({
+  selector:'app-server',
+  templateUrl:'server.component.html'
+
+  })
+  export class ServerComponent
+  {
+
+  }
+  ******************************************
+  4.register the component to app module in declartion section .
+
+What is module ?
+its a bundle of functionality .
+
+By default angular not scan all component  we have to register .
+
+@NgModule : consists of declaration imports providers and bootstrap .
+
+in declaration we are to adding the newly created component and for working we have to import the component from respective path.
+
+********************Create component using CLI ************
+ng generate component servers
+
+or
+ng g c servers2
+
+this comand will create a follder and register the component in app module .
+
+
+each component must ahve either templateUrl or template for view.
+
+templateUrl : we prvide the external file . or
+template: we ll write inline html also .
+
+ styleUrls: is an array of styles which can be refer to external style sheet . or
+ styles:[] inline styles .
+styles: [{`
+h3{ }
+
+},
+ `}]
