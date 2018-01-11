@@ -74,3 +74,24 @@ h3{ }
 
 },
  `}]
+
+ selector :
+
+ ->we can use selector as tag <app></app>   selector: 'app-servers',
+ -->or we can use selector as attribute [app] in selector attribute of component class .   selector: '[app-servers]' .
+ if we use as attribute then we can asses that selector in html page by
+ <div app></div>
+
+
+
+ $event : use to fetch the current object (onLick)="passValue($event)"
+
+
+
+ Important: FormsModule is Required for Two-Way-Binding!
+Section 2, Lecture 30
+Important: For Two-Way-Binding to work, you need to enable the ngModel  directive. This is done by adding the FormsModule  to the imports[]  array in the AppModule.
+
+You then also need to add the import from @angular/forms  in the app.module.ts file:
+
+import { FormsModule } from '@angular/forms';
