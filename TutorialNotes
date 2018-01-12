@@ -1,3 +1,5 @@
+ng new AgularProject
+
 to add any other library to our application use install command .
 ** npm install --save bootstrap
 
@@ -95,3 +97,33 @@ Important: For Two-Way-Binding to work, you need to enable the ngModel  directiv
 You then also need to add the import from @angular/forms  in the app.module.ts file:
 
 import { FormsModule } from '@angular/forms';
+
++++++++directice++++
+
+1.*ngIf : * is required as if is structural condition
+
+
+<p *ngIf="serverCreated;else noServer">
+
+<ng-template #noServer>
+<p>No Server was created</p>
+<ng-template>
+
+2.[ngStyle]
+
+ngStyle is the directice.
+[] indicate we ant to bind some property .
+
+<p [ngStyle]="{backgroundColor:getColor()}"
+
+
+3.[ngClass]
+
+4.*ngFor
+
+< p *ngFor="let server of servers">
+
+
+
+
++++++++directice++++
