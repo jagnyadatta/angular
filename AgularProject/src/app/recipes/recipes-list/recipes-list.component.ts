@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import {Recipe} from '../recipes.modal';
 @Component({
   selector: 'app-recipes-list',
@@ -7,6 +7,8 @@ import {Recipe} from '../recipes.modal';
 })
 export class RecipesListComponent implements OnInit {
 
+
+@Output() recipeWasSelected=new EventEmitter<Recipe>();
 recipes:Recipe[]=[
 new Recipe('A test Recipe',"Kaju Paneer",'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg')
 ,new Recipe('A test Recipe',"Kaju Paneer",'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg')
@@ -18,4 +20,7 @@ new Recipe('A test Recipe',"Kaju Paneer",'https://www.bbcgoodfood.com/sites/defa
   ngOnInit() {
   }
 
+ onRecipeSelected(recipe:Recipe){
+this.recipeWasSelected.emit(recipe);
+ }
 }
